@@ -1,0 +1,47 @@
+<h1>Signup</h1>
+  <div class="formulario">
+     <form #formularioS="ngForm" (ngSubmit)="onSubmit(formularioS)">
+        <input type="text" name="name" placeholder="name" #name="ngModel" [(ngModel)]="datos.name"  required>
+        <span *ngIf="name.touched && !name.valid" [ngStyle]="{
+         'color':'white',
+         'padding':'3px',
+         'margin-left':'15px',
+         'background':'rgba(0, 0, 0, 0.5)'
+   
+       }"
+   
+       >El nombre es obligatorio</span>
+        
+        <input type="text" name="last" placeholder="last" #last="ngModel" [(ngModel)]="datos.last" required>
+        <span *ngIf="last.touched && !last.valid" [ngStyle]="{
+         'color':'white',
+         'padding':'3px',
+         'margin-left':'15px',
+         'background':'rgba(0, 0, 0, 0.5)'
+   
+       }"
+   
+       >El apellido es obligatorio</span>
+        <input type="email" name="email" id="" placeholder="email" #email="ngModel" [(ngModel)]="datos.email" required>
+        <span *ngIf="email.touched && !email.valid" [ngStyle]="{
+         'color':'white',
+         'padding':'3px',
+         'margin-left':'15px',
+         'background':'rgba(0, 0, 0, 0.5)'
+   
+       }"
+   
+       >El email es obligatorio</span>
+        <input type="password" name="password" id="" placeholder="password" #password="ngModel" [(ngModel)]="datos.password" required>
+        <span *ngIf="password.touched && !password.valid" [ngStyle]="{
+         'color':'white',
+         'padding':'3px',
+         'margin-left':'15px',
+         'background':'rgba(0, 0, 0, 0.5)'
+   
+       }"
+   
+       >La contraseña es obligatoria</span>
+        <input type="submit" id="enviar" value="Signup" [disabled]="!formularioS.form.valid" >
+     </form>
+  </div>

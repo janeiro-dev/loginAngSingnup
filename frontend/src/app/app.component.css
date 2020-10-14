@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "finger";
+    src:url("./fonts/finger.ttf");
+  }
+  
+  @font-face {
+    font-family: "Prisma";
+    src:url("./fonts/Prisma.ttf");
+  }
+  @font-face {
+    font-family: "Prismas";
+    src:url("./fonts/Prisma.otf");
+  }
+
+  .brand-logo{
+      font-family: 'finger';
+  }
+

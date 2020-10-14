@@ -1,0 +1,26 @@
+
+<header>
+
+  <nav class="nav-wrapper">
+      <a href="/" class="brand-logo">Super Store</a>
+    
+  </nav>
+
+
+</header>
+
+<section class="wraper">
+
+  <div class="card">
+    <div class="router">
+  <a  [routerLink]="['login']" [routerLinkActive]="['actived']">Login</a>
+  <a  [routerLink]="['signup']" [routerLinkActive]="['actived']">Singup</a>
+</div>
+  <router-outlet></router-outlet>
+</div>
+
+</section>
+<footer>
+  <h3>janeiro pages</h3>
+
+</footer>

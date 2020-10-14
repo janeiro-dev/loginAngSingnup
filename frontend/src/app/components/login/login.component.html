@@ -1,0 +1,74 @@
+
+<h1>Login</h1>
+  <div class="formulario">
+     <form #formularioL="ngForm" (ngSubmit)="onSubmit(formularioL)">
+        <input type="email" name="email" id="" placeholder="email" #email="ngModel" [(ngModel)]="datos.email" required>
+        <span *ngIf="email.touched && !email.valid" [ngStyle]="{
+         'color':'white',
+         'padding':'3px',
+         'margin-left':'15px',
+         'background':'rgba(0, 0, 0, 0.5)'
+   
+       }"
+   
+       >El email es obligatorio</span>
+
+        <input type="password" name="password" id="" placeholder="password" #password="ngModel" [(ngModel)]="datos.password" required>
+        <span *ngIf="password.touched && !password.valid" [ngStyle]="{
+         'color':'white',
+         'padding':'3px',
+         'margin-left':'15px',
+         'background':'rgba(0, 0, 0, 0.5)'
+   
+       }"
+   
+       >La contraseña es obligatoria</span>
+
+    
+         
+       <div *ngIf="validator.indexOf(' ')==5"> 
+         <p [ngStyle]="{
+            'color':'white',
+            'padding':'3px',
+            'margin-left':'15px',
+            'background':'rgba(0, 0, 0, 0.5)',
+            'width':'90%'
+          }" >{{validator}}</p>    
+      </div> 
+
+          <div *ngIf="validator=='This password is not correct ,TRY AGAIN'"> 
+            <p [ngStyle]="{
+               'color':'white',
+               'padding':'3px',
+               'margin-left':'15px',
+               'background':'rgba(240, 144, 18, 0.8)',
+               'width':'90%'
+             }" >{{validator}}</p>    
+         </div>
+
+         <div *ngIf="validator=='This e-mail is not exist'"> 
+            <p [ngStyle]="{
+               'color':'white',
+               'padding':'3px',
+               'margin-left':'15px',
+               'background':'red',
+               'width':'90%'
+             }" >{{validator}}</p>    
+         </div>
+          
+         <div *ngIf="validator.indexOf('e')==1"> 
+            <p [ngStyle]="{
+               'color':'white',
+               'padding':'3px',
+               'margin-left':'15px',
+               'background':'green',
+               'width':'90%'
+             }" >{{validator}}</p>    
+         </div>
+
+        <input type="submit" id="enviar" value="Login" [disabled]="!formularioL.form.valid" >
+     </form>
+
+
+
+  </div>
